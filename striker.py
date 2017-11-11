@@ -7,6 +7,7 @@ import cookielib
 import requests
 import os
 from urllib import urlencode
+import sys
 from plugins.DNSDumpsterAPI import DNSDumpsterAPI
 params = []
 # Browser
@@ -35,7 +36,8 @@ print '''\033[1;31m
   /        \|  |  |  | \/  |    <\  ___/|  | \/
  /_______  /|__|  |__|  |__|__|_ \\\\___  >__|
          \/                     \/    \/\033[1;m'''
-target = raw_input('\033[1;34m[?]\033[1;m Enter the target: ')
+#target = raw_input('\033[1;34m[?]\033[1;m Enter the target: ')
+target = sys.argv[1]
 if 'http' in target:
     parsed_uri = urlparse(target)
     domain = '{uri.netloc}'.format(uri=parsed_uri)
